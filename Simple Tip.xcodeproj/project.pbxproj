@@ -12,6 +12,7 @@
 		7F6A4D0D1BFEAE9B00C1C693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F6A4D0B1BFEAE9B00C1C693 /* Main.storyboard */; };
 		7F6A4D0F1BFEAE9B00C1C693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6A4D0E1BFEAE9B00C1C693 /* Assets.xcassets */; };
 		7F6A4D121BFEAE9B00C1C693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F6A4D101BFEAE9B00C1C693 /* LaunchScreen.storyboard */; };
+		7F6A4D1C1BFF79D300C1C693 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A4D1B1BFF79D300C1C693 /* GradientColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7F6A4D0E1BFEAE9B00C1C693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6A4D111BFEAE9B00C1C693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F6A4D131BFEAE9B00C1C693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F6A4D1B1BFF79D300C1C693 /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				7F6A4D0E1BFEAE9B00C1C693 /* Assets.xcassets */,
 				7F6A4D101BFEAE9B00C1C693 /* LaunchScreen.storyboard */,
 				7F6A4D131BFEAE9B00C1C693 /* Info.plist */,
+				7F6A4D1B1BFF79D300C1C693 /* GradientColor.swift */,
 			);
 			path = "Simple Tip";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			files = (
 				7F6A4D0A1BFEAE9B00C1C693 /* ViewController.swift in Sources */,
 				7F6A4D081BFEAE9B00C1C693 /* AppDelegate.swift in Sources */,
+				7F6A4D1C1BFF79D300C1C693 /* GradientColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				7F6A4D181BFEAE9B00C1C693 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
