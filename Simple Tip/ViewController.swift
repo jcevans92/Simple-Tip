@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -76,6 +77,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         SplitText.delegate = self
         SubTotalText.delegate = self
         TaxPercent.delegate = self
+        
+        // Can show adds
+        canDisplayBannerAds = true
+        
+        // IntersitialAds
+        UIViewController.prepareInterstitialAds()
+        self.interstitialPresentationPolicy = .Manual
         
     }
     
@@ -150,6 +158,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 button.setTitle("Calculate", forState: .Normal)
                 
                 count = 0
+                
+                // Shows Interstitial Ad if available
+                self.requestInterstitialAdPresentation()
             }
         } else {
             showAlert("Missing Values", msg: "Please be sure to fill in all values that are needed and try again.")
