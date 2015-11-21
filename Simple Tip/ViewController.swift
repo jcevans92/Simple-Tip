@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var count = 0
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     @IBOutlet weak var button: UIButton!
     
     // Fifteen Collumn
@@ -41,9 +43,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var TaxPercent: UITextField!
     @IBOutlet weak var SplitText: UITextField!
     
-    
     // Make sure this appears before load
-    override func viewDidAppear(animated: Bool) {
+    // --- Hide Navbar on login screen and ---
+    override func viewWillDisappear(animated: Bool)
+    {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         view.backgroundColor = UIColor.clearColor()
         let backgroundLayer = GradientColor.init().gl
         backgroundLayer.frame = view.frame
@@ -78,12 +89,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         SubTotalText.delegate = self
         TaxPercent.delegate = self
         
-        // Can show adds
-        canDisplayBannerAds = true
+        if userDefaults.boolForKey("proUser") {
+            // No Ads
+        } else {
+            // Can show adds
+            canDisplayBannerAds = true
         
-        // IntersitialAds
-        UIViewController.prepareInterstitialAds()
-        self.interstitialPresentationPolicy = .Manual
+            // IntersitialAds
+            UIViewController.prepareInterstitialAds()
+            self.interstitialPresentationPolicy = .Manual
+        }
         
     }
     
@@ -158,9 +173,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 button.setTitle("Calculate", forState: .Normal)
                 
                 count = 0
+               
+                if userDefaults.boolForKey("proUser") {
+                    // No ads
+                } else {
+                    // Shows Interstitial Ad if available
+                    self.requestInterstitialAdPresentation()
+                }
                 
-                // Shows Interstitial Ad if available
-                self.requestInterstitialAdPresentation()
             }
         } else {
             showAlert("Missing Values", msg: "Please be sure to fill in all values that are needed and try again.")
@@ -269,5 +289,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    // SHOW INFO
+    @IBAction func didTapInfo(sender: UIButton!) {
+        performSegueWithIdentifier("showInfo", sender: self)
+    }
 }
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +21,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Change status bar
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios_guide#localdatastore/iOS
+        //Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("ktnzbiFl9rj03Ct1i1HI6G5PUSSy9vpxZMo5QHnX",
+            clientKey: "kzuvPGWQTcLci42ijDpzIyw5t6419zRgclM02m8C")
+        
+        // [Optional] Track statistics around application opens.
+        //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        
+        // Use the product identifier from iTunes to register a handler.
+        PFPurchase.addObserverForProduct("info.jeremyevans.Simple_Tip.remove_ads") {
+            (transaction: SKPaymentTransaction?) -> Void in
+            // Write business logic that should run once this product is purchased.
+            //isPro = YES;
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            
+            userDefaults.setBool(true, forKey: "proUser")
+            userDefaults.synchronize()
+        }
         
         return true
     }
