@@ -11,6 +11,10 @@ import Parse
 
 class InfoVC: UIViewController {
 
+    @IBOutlet weak var removeAds: UIButton!
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewWillAppear(animated: Bool) {
         let topColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
         view.backgroundColor = UIColor.clearColor()
@@ -20,6 +24,12 @@ class InfoVC: UIViewController {
         
         navigationController?.navigationBar.barTintColor = topColor
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        if userDefaults.boolForKey("proUser") {
+            removeAds.hidden = true
+        } else {
+            removeAds.hidden = false
+        }
         
     }
     

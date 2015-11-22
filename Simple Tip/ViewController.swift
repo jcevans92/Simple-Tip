@@ -230,35 +230,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let mealTwentyFive = meal + tipTwentyFiveValue
         
         if split <= 1 {
-            splitFifteen.text = "\(round(mealFifteen * 100) / 100)"
-            splitTwenty.text = "\(round(mealTwenty * 100) / 100)"
-            splitTwentyFive.text = "\(round(mealTwentyFive * 100) / 100)"
+            splitFifteen.text = "$\(round(mealFifteen * 100) / 100)"
+            splitTwenty.text = "$\(round(mealTwenty * 100) / 100)"
+            splitTwentyFive.text = "$\(round(mealTwentyFive * 100) / 100)"
         } else {
             let splitFifteenValue = mealFifteen / split
             let splitTwentyValue = mealTwenty / split
             let splitTwentyFiveValue = mealTwentyFive / split
             
-            splitFifteen.text = "\(round(splitFifteenValue * 100) / 100)"
-            splitTwenty.text = "\(round(splitTwentyValue * 100) / 100)"
-            splitTwentyFive.text = "\(round(splitTwentyFiveValue * 100) / 100)"
+            splitFifteen.text = "$\(round(splitFifteenValue * 100) / 100)"
+            splitTwenty.text = "$\(round(splitTwentyValue * 100) / 100)"
+            splitTwentyFive.text = "$\(round(splitTwentyFiveValue * 100) / 100)"
         }
         
         
-        tipFifteen.text = "\(round(tipFifteenValue * 100) / 100)"
-        tipTwenty.text = "\(round(tipTwentyValue * 100) / 100)"
-        tipTwentyFive.text = "\(round(tipTwentyFiveValue * 100) / 100)"
+        tipFifteen.text = "$\(round(tipFifteenValue * 100) / 100)"
+        tipTwenty.text = "$\(round(tipTwentyValue * 100) / 100)"
+        tipTwentyFive.text = "$\(round(tipTwentyFiveValue * 100) / 100)"
         
-        subFifteen.text = "\(round(meal * 100) / 100)"
-        subTwenty.text = "\(round(meal * 100) / 100)"
-        subTwentyFive.text = "\(round(meal * 100) / 100)"
+        subFifteen.text = "$\(round(meal * 100) / 100)"
+        subTwenty.text = "$\(round(meal * 100) / 100)"
+        subTwentyFive.text = "$\(round(meal * 100) / 100)"
         
-        taxFifteen.text = "\(round(constantTax * 100) / 100)"
-        taxTwenty.text = "\(round(constantTax * 100) / 100)"
-        taxTwentyFive.text = "\(round(constantTax * 100) / 100)"
+        taxFifteen.text = "$\(round(constantTax * 100) / 100)"
+        taxTwenty.text = "$\(round(constantTax * 100) / 100)"
+        taxTwentyFive.text = "$\(round(constantTax * 100) / 100)"
         
-        totalFifteen.text = "\(round(mealFifteen * 100) / 100)"
-        totalTwenty.text = "\(round(mealTwenty * 100) / 100)"
-        totalTwentyFive.text = "\(round(mealTwentyFive * 100) / 100)"
+        totalFifteen.text = "$\(round(mealFifteen * 100) / 100)"
+        totalTwenty.text = "$\(round(mealTwenty * 100) / 100)"
+        totalTwentyFive.text = "$\(round(mealTwentyFive * 100) / 100)"
         
         // Unhide labels
         tipFifteen.hidden = false
